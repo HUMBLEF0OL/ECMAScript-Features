@@ -3,7 +3,7 @@ A repository for listing all the new features of ECMAScript version wise.
 
 ___
 
-[ES6(ES2015) features list](https://test.com)
+[ES6(ES2015) features list](https://github.com/HUMBLEF0OL/ECMAScript-Features/tree/feature/ES2015/ES2015)
 
 <h2><b> A brief history of JavaScript and ECMAScript</b></h2>
 
