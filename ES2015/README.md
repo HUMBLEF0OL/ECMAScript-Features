@@ -2,7 +2,6 @@
 Following are the new features included in ES6:
 
 
-- [ECMAScript 2015 also known as ES6 was the second major revision to JavaScript.](#ecmascript-2015-also-known-as-es6-was-the-second-major-revision-to-javascript)
   - [Let keyword](#let-keyword)
   - [Const keyword](#const-keyword)
   - [Arrow Functions](#arrow-functions)
