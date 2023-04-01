@@ -22,6 +22,6 @@ A Netscape programmer by the name of Brendan Eich created a new scripting langua
 
 All of the browser manufacturers at the time were engaged in a battle when Netscape initially released JavaScript on the market. JavaScript was implemented by Microsoft(JScript) and a number of other browser companies in their individual browsers under different names and with varying syntax. Developers were severely inconvenienced by this because code that was effective in one browser was completely useless in another. This continued for a long until everyone decided to switch to using JavaScript in their browsers.
 
-In order to ensure adequate upkeep and support of the language, Netscape submitted JavaScript to the European Computer Manufacturers Association ([ECMA](https://www.ecma-international.org/)) for standardisation. JavaScript was formally known as ECMAScript since it was standardised by ECMA.
+In order to ensure adequate upkeep and support of the language, Netscape submitted JavaScript to the European Computer Manufacturers Association ([ECMA](https://www.ecma-international.org/)) for standardization. JavaScript was formally known as ECMAScript since it was standardized by ECMA.
 
-Browsers and Node.js are the two main host environments for JavaScript. Several APIs are added to the language by these contexts. You get ECMAScript if you remove all of the external APIs from these environments. ECMAScript can be conceptualised as JavaScript without a host environment.
+Browsers and Node.js are the two main host environments for JavaScript. Several APIs are added to the language by these contexts. You get ECMAScript if you remove all of the external APIs from these environments. ECMAScript can be conceptualized as JavaScript without a host environment.
