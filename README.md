@@ -11,9 +11,12 @@ Together with HTML and CSS, the programming language JavaScript is one of the th
 
 The first web browser with a graphical user interface was called Mosaic. Its initial release in 1993 marked a turning point in the quick evolution of the internet into what it is today. In 1994, Netscape (now Mozilla), which was formed by the principal inventors of Mosaic, introduced Netscape Navigator, a more sophisticated browser.
 
-Early web sites lacked the ability for dynamic behaviour and interactivity and were purely static. As a result, there was a desire to do rid of this restriction at the time in the web development community. Due to this, Netscape decided to provide the Navigator browser a scripting language.
+Early web sites lacked the ability for dynamic behavior and interactivity and were purely static. As a result, there was a desire to do rid of this restriction at the time in the web development community. Due to this, Netscape decided to provide the Navigator browser a scripting language.
 
-A Netscape programmer by the name of Brendan Eich created a new scripting language in about 10 days in September 1995. First known as Mocha, it was soon recognised as LiveScript and then JavaScript.
+A Netscape programmer by the name of Brendan Eich created a new scripting language in about 10 days in September 1995. First known as Mocha, it was soon recognized as LiveScript and then JavaScript.
+
+<center> `Mocha -> LiveScript -> JavaScript`</center>
+<br><br>
 
 ## What Is ECMAScript?
 
