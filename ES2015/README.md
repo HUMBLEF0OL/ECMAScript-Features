@@ -1,6 +1,6 @@
 ## ECMAScript 2015 also known as ES6 was the second major revision to JavaScript.
-Following are the new features included in ES6:
 
+Following are the new features included in ES6:
 
 - [ECMAScript 2015 also known as ES6 was the second major revision to JavaScript.](#ecmascript-2015-also-known-as-es6-was-the-second-major-revision-to-javascript)
   - [Let keyword](#let-keyword)
@@ -12,11 +12,12 @@ Following are the new features included in ES6:
   - [JavaScript Sets](#javascript-sets)
   - [JavaScript Classes](#javascript-classes)
     - [The Constructor Method](#the-constructor-method)
+  - [Promises](#promises)
 
-
-___
+---
 
 ### Let keyword
+
 The `let` keyword allows you to declare a variable with block scope i.e _the variable defined within a block will not be accessible from outside the block_. The variables defined with let can't be redeclare and must be declared before use
 
 ```Javascript
@@ -27,7 +28,7 @@ var x = 10; // Here x is 10
 // Here x is 10
 ```
 
-___
+---
 
 ### Const keyword
 
@@ -46,13 +47,14 @@ const PI = 3.141592653589793;
 PI = 3.14;      // This will give an error
 PI = PI + 10;   // This will also give an error
 ```
+
 **In ES2015 _block level scope_ was introduced and before it only _global level_ and _function level_ scope was available.**
 
-___
+---
 
 ### Arrow Functions
 
-Arrow functions allows a short syntax for writing function expressions. You don't need the `function, return` keyword and the **curly brackets**. 
+Arrow functions allows a short syntax for writing function expressions. You don't need the `function, return` keyword and the **curly brackets**.
 
 ```Javascript
 // ES5
@@ -65,15 +67,17 @@ const x = (x, y) => x * y;
 ```
 
 Following are the few things to note while using Arrow functions.
+
 - Arrow functions don't have their own `this`. Hence they are not well suited for defining **object methods**.
 - Arrow functions are not hoisted. They must be defined before they are used.
 - Using `const` is safer than using `var`, as a function expression is always a constant value.
 - You can only omit the `return` keyword and the curly brackets if the function is a single statement and because of this, it might be a good habit to always keep them.
- 
- ```Javascript
+
+```Javascript
 const x = (x, y) => { return x * y };
- ```
-___
+```
+
+---
 
 ### The Spread (...) Operator
 
@@ -102,17 +106,21 @@ The `...` operator can be used to expand an iterable into more arguments for fun
 const numbers = [23,55,21,87,56];
 let maxValue = Math.max(...numbers);
 ```
-___
+
+---
 
 ### The For/Of Loop
-The Javascript `for/of` statement loops through the values of an iterable objects. `for/of` lets you loop over data structures that are iterable such as Arrays, Strings, Maps, NodeLists and more. 
+
+The Javascript `for/of` statement loops through the values of an iterable objects. `for/of` lets you loop over data structures that are iterable such as Arrays, Strings, Maps, NodeLists and more.
 
 **Syntax:**
+
 ```Javascript
 for(variable of iterable){
   // code to be executed
 }
 ```
+
 `variable` - For every iteration the value of the next property is assigned to the variable. Variable can be declared with `const`, `let`, or `var`.
 
 `iterable` - An object that has iterable properties.
@@ -130,13 +138,14 @@ for(let x of fruits){
 
 _It is better to use a `for`, `for of` loop when the order in which the elements are accessed is important over `for in` loop._
 
-___
+---
 
 ### JavaScript Maps
 
 Map objects are collections of key-value pairs. A key in the Map may only occur once; it is unique in the Map's collection. A Map object is iterated by key-value pairs — a for...of loop returns a 2-member array of [key, value] for each iteration. Iteration happens in insertion order, which corresponds to the order in which each key-value pair was first inserted into the map by the set() method (that is, there wasn't a key with the same value already in the map when set() was called).
 
 **Example:**
+
 ```Javascript
 // Create a Map
 const fruits = new Map();
@@ -146,19 +155,21 @@ fruits.set("apples", 500);
 fruits.set("bananas", 300);
 fruits.set("oranges", 200);
 ```
+
 **Object vs Maps quick comparison**
 
+| Objects                           | Maps                          |
+| --------------------------------- | ----------------------------- |
+| Not directly iterable             | Directly iterable             |
+| Do not have a size property       | Have a size property          |
+| Keys must be Strings (or Symbols) | Keys can be any datatype      |
+| Keys are not well ordered         | Keys are ordered by insertion |
+| Have default keys                 | Do not have default keys      |
 
-| Objects | Maps |
-|---------|------|
-| Not directly iterable |	Directly iterable|
-|Do not have a size property	| Have a size property|
-|Keys must be Strings (or Symbols)	| Keys can be any datatype|
-|Keys are not well ordered	| Keys are ordered by insertion|
-|Have default keys	| Do not have default keys|
-___
+---
 
 ### JavaScript Sets
+
 A JavaScript set is a collection of unique values. Each value can only occur once in a set and a set can only hold value of any data type. `forEach()` method can be used to fetch teach Set element.
 
 **Example:**
@@ -174,7 +185,8 @@ letters.forEach (function(value) {
 })
 // output will be -> abc
 ```
-___
+
+---
 
 ### JavaScript Classes
 
@@ -189,6 +201,7 @@ class ClassName{
   constructor(){}
 }
 ```
+
 **Example:**
 
 ```Javascript
@@ -200,6 +213,7 @@ class Car{
 }
 // the above code will creates a class named `Car` with 2 initial properties: `name` and `year`.
 ```
+
 - _A Javascript class in not an object. It is the temple that is used to create the object._
 - The constructor method is called automatically when a new object is created.
 
@@ -208,9 +222,75 @@ const myCar1 = new Car("Ford", 2014);
 const myCar2 = new Car("Audi", 2019);
 // the above code will create 2 Car objects using the Car class.
 ```
+
 #### The Constructor Method
+
 The constructor method is a special method:
+
 - It has to have the exact name `constructor`
 - It is executed automatically when a new object is created
 - It is used to initialize object properties
 - If you don't define a constructor method, Javascript will add an empty constructor method.
+
+---
+
+### Promises
+
+- **Producing code** is code that can take some time
+- **Consuming code** is code that must wait for the result
+
+A Promise is a JavaScript object that links producing code and consuming code. Hence it contains both the producing code and the call to the consuming code.
+
+**Syntax:**
+
+```Javascript
+let examplePromise = new Promise((resolve, reject)=>{
+  // producing code -> which may take some time
+  resolve(); // when successful
+  reject(); // when failed or error
+});
+
+// consuming code -> which will wait for the promise to fulfill
+examplePromise.then(
+  ()=>{
+    // for successful execution
+  }
+  ()=>{
+    // for error
+  }
+);
+```
+
+On successful completion of producing code, one of the two callback(resolve, reject) is called. There are two properties of the Promise object: **state** and **result** which are inaccessible and in order to handle the promises we must use the Promise method. Following are the 3 stages of promise:
+
+- Pending: waiting for result
+- Fulfilled: Promise results in success
+- Reject: Promise result in failure
+
+`Promise.then()` that takes two arguments, a callback for success and another for failure. Both are optional, so you can dd a callback for success or failure only. If we're interested only in errors, then we can use `null` as the first argument.
+**Example:**
+
+```Javascript
+const loadScript = (src) => {
+  return new Promise((resolve,reject)=>{
+    let script = document.createElement("script");
+    script.scr = scr;
+    script.onload = () => resolve(script);
+    script.onerror = ()=> reject(new Error(`Script load error for ${scr}`));
+
+    document.head.append(script);
+  });
+
+  // Usage:
+  let promise = loadScript("https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.js");
+
+  promise.then(
+    (script)=>{
+      alert(`${script.src} is loaded!`);
+    }
+    (error) =>{
+      alert(`Error: ${error.message}`);
+    }
+  );
+}
+```
