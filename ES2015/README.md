@@ -13,6 +13,7 @@ Following are the new features included in ES6:
   - [JavaScript Classes](#javascript-classes)
     - [The Constructor Method](#the-constructor-method)
   - [Promises](#promises)
+  - [The Symbol Type](#the-symbol-type)
 
 ---
 
@@ -294,3 +295,75 @@ const loadScript = (src) => {
   );
 }
 ```
+
+---
+
+### The Symbol Type
+
+The Javascript ES6 introduced a new primitive data type called `Symbol`. Symbols are immutable(can't be changed) and are unique.
+
+**Example:**
+
+```Javascript
+// two symbols with the same description
+const value1 = Symbol('hello');
+const value2 = Symbol('hello');
+
+console.log(value1 === value2); // false
+```
+
+Though `value1` and `value2` both contain the same description, they are different.
+
+- For creating symbol you can use `Symbol()` function, also an optional string as its description can be passed
+  ```Javascript
+  const x = Symbol()
+  const x = Symbol("hey");
+  console.log(x); // Symbol(hey)
+  ```
+- To access the description of a symbol, we can use the `.description` operator.
+  ```Javascript
+  const x = Symbol('hey');
+  console.log(x.description); // hey
+  ```
+- To add symbols as a _key_ in an object we can use the `[]` brackets.
+  ```Javascript
+  let id = Symbol('id');
+  let person = {
+    name:"Jack",
+    // adding symbol as a key
+    [id]: 123 //not "id":123
+  }
+  console.log(person) // {name:"Jack", Symbol(id): 123}
+  ```
+- The `for...in` loop doesn't iterate over Symbolic properties.
+
+**Benefits of Using Symbols in Object**
+
+If the same code snippet is used in various programs, then its is better to use `Symbols` in the object key. It is because you can use the same key name i different codes and avoid duplication issues.
+
+**Example:**
+
+```Javascript
+let person = {
+  name: "Jack"
+};
+//creating symbol
+let id = Symbol("id");
+// adding symbol as a key
+person[id] = 12;
+```
+
+In the above example, if the `person` object is also used by another program, then you wouldn't want to add a property that can be accessed or changed by another program. Hence by using symbol, you create a unique property that you can use.
+
+Now if the other program also needs to use a property named _id_, just add a Symbol named `id` and there won't be duplication issues. For example:
+
+```Javascript
+let person ={
+  name: 'Jack'
+};
+
+let id = Symbol('id');
+person[id] = "Another value";
+```
+
+In the above program, even if the same name is used to store values, the symbol data type will have a unique value.
