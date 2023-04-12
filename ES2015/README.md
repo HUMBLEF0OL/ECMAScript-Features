@@ -14,6 +14,12 @@ Following are the new features included in ES6:
     - [The Constructor Method](#the-constructor-method)
   - [Promises](#promises)
   - [The Symbol Type](#the-symbol-type)
+  - [Default Parameter Values](#default-parameter-values)
+  - [Function Rest Parameter](#function-rest-parameter)
+  - [String.includes()](#stringincludes)
+  - [String.startsWith()](#stringstartswith)
+  - [String.endsWith()](#stringendswith)
+  - [Array.from()](#arrayfrom)
 
 ---
 
@@ -367,3 +373,105 @@ person[id] = "Another value";
 ```
 
 In the above program, even if the same name is used to store values, the symbol data type will have a unique value.
+
+---
+
+### Default Parameter Values
+
+ES6 allows function parameters to have default values.
+
+**Example:**
+
+```Javascript
+const addFunction = (x,y=10) =>{
+  // if values of  y are not passed then default value of 10 will be applied to it
+  return x +y;
+}
+addFunction(5); // will return 15
+```
+
+
+---
+
+### Function Rest Parameter
+The rest parameter (...) allows a function to treat an indefinite number of argument as an array:
+
+**Example:**
+
+```Javascript
+const totalSum = (...args) =>{
+  let sum = 0;
+  for(let arg of args){
+    sum += arg;
+  }
+  return sum;
+}
+
+let x = totalSum(4,6,1,2,7,5);
+```
+---
+
+### String.includes()
+The `includes()` method returns `true` if a string contains a specified value, otherwise `false`. The `includes()` method is _case sensitive_. 
+
+**Example:**
+```Javascript
+let text = "The is the sample string";
+text.includes("sample") // returns true
+```
+---
+
+### String.startsWith()
+
+
+The `startsWith()` method returns `true` if a string begins with a specified value, otherwise `false`. This method is _case-sensitive_.
+
+**Example:**
+```Javascript
+let text = "This is the sample string";
+text.startsWith("This") // returns true
+```
+
+---
+
+### String.endsWith()
+
+The `endsWith()` method returns `true` if a string ends with a specified value, otherwise `false`. This method is _case-sensitive_.
+
+**Example:**
+```Javascript
+let text = "This is the sample string";
+text.endsWith("string") // returns true
+```
+---
+
+### Array.from()
+
+The `Array.from()` method lets you create array from _iterable objects_(object such as `Map` and `Set`) or if the object is not iterable,array-like objects(objects with a `length` property and indexed elements). `Array.from()` never creates a sparse array(an array of data in which many elements have a value of zero)
+
+**Example:**
+
+```Javascript
+// array from a string
+Array.from("foo"); //["f","o","o"]
+
+
+// array from a set
+const set = new Set(["foo", "bar", "baz", "foo"]);
+Array.from(set); // ["foo", "bar", "baz"]
+
+// array from a Map
+const map = new Map([
+  [1, 2],
+  [2, 4],
+  [4, 8],
+]);
+Array.from(map);
+// [[1, 2], [2, 4], [4, 8]]
+Array.from(mapper.values());
+// ['a', 'b'];
+
+Array.from(mapper.keys());
+// ['1', '2'];
+
+```
