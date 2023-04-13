@@ -20,6 +20,7 @@ Following are the new features included in ES6:
   - [String.startsWith()](#stringstartswith)
   - [String.endsWith()](#stringendswith)
   - [Array.from()](#arrayfrom)
+  - [Array.keys()](#arraykeys)
 
 ---
 
@@ -474,4 +475,27 @@ Array.from(mapper.values());
 Array.from(mapper.keys());
 // ['1', '2'];
 
+```
+---
+### Array.keys()
+The Javascript `array.keys()` method is used to return a new array iterator which contains the keys for each index in the given input array. It returns a new array iterator.
+**Syntax:**
+```Javascript
+array.keys()
+```
+**Example:**
+```Javascript
+// Taking input as an array A
+// containing some elements.
+let A = [ 5, 6, 10 ];
+  
+// array.keys() method is called
+let iterator = A.keys();
+  
+// printing index array using the iterator
+for (let key of iterator) {
+    console.log(key);
+}
+
+// output will be -> 0,1,2
 ```
