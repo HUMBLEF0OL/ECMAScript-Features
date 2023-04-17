@@ -21,6 +21,9 @@ Following are the new features included in ES6:
   - [String.endsWith()](#stringendswith)
   - [Array.from()](#arrayfrom)
   - [Array.keys()](#arraykeys)
+  - [Array.find()](#arrayfind)
+  - [Array.findIndex()](#arrayfindindex)
+  - [New Math Methods](#new-math-methods)
 
 ---
 
@@ -499,3 +502,87 @@ for (let key of iterator) {
 
 // output will be -> 0,1,2
 ```
+---
+
+### Array.find()
+The `find()` method returns the value of the first array element that passes a test function. 
+- This method will return `undefined` if no elements are found.
+- The `find()` method does not execute the function for empty elements.
+- The `find()` method does not change the original array.
+
+**Syntax:**
+```javascript
+array.find(function(currentValue, index, arr),thisValue)
+/*
+  function() -> required(a function to be run for each array element)
+  currentValue -> required (value of current element)
+  index -> optional (index of current element)
+  arr -> optional (the array of the current element)
+  thisValue -> optional and default is undefined
+*/
+```
+**Example:**
+```Javascript
+// the below example finds the first element that is larger than 18:
+const numbers = [4, 9, 16, 25, 29];
+let first = numbers.find((value, index) => {
+  return value > 18;
+})
+// output will be 25
+```
+
+### Array.findIndex()
+The `findIndex() method returns the index of the first array element that passes a test function.
+- The `findIndex()` method returns -1 if no match is found.
+- The `findIndex()` method doesn't execute the function for empty array elements.
+- The `findIndex()` method doesn't change the original array.
+
+**Syntax:**
+```Javascript
+array.findIndex(function(currentValue, index, arr), thisValue)
+/*
+  function() -> required(a function to be run for each array element)
+  currentValue -> required (value of current element)
+  index -> optional (index of current element)
+  arr -> optional (the array of the current element)
+  thisValue -> optional and default is undefined
+*/
+```
+
+**Example:**
+```Javascript
+const ages = [3, 10, 18, 20];
+
+ages.findIndex(checkAge);
+
+function checkAge(age) {
+  return age > 18;
+}
+```
+
+### New Math Methods
+ES6 added the following methods to the Math object:
+- `Math.trunc()`: returns the integer part of x:
+  
+    **Example:**
+    `Math.trunc(4.9) //returns 4`
+
+- `Math.sign()`: returns if x is negative, null or positive:
+  
+    **Example:**
+    `Math.sign(-4) //returns -1` 
+
+- `Math.cbrt()`: returns the cube root of x:
+  
+    **Example:**
+    `Math.cbrt(64) //returns 4` 
+
+- `Math.log2()`: returns the base 2 logarithm of x:
+  
+    **Example:**
+    `Math.log2(2) //returns 1` 
+
+- `Math.log10()`: returns the base 10 logarithm of x:
+  
+    **Example:**
+    `Math.log10(10) //returns 1` 
