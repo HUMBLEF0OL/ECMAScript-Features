@@ -24,6 +24,10 @@ Following are the new features included in ES6:
   - [Array.find()](#arrayfind)
   - [Array.findIndex()](#arrayfindindex)
   - [New Math Methods](#new-math-methods)
+  - [New Number Properties](#new-number-properties)
+  - [New Number Methods](#new-number-methods)
+  - [New Global Methods](#new-global-methods)
+  - [Object entries()](#object-entries)
 
 ---
 
@@ -586,3 +590,64 @@ ES6 added the following methods to the Math object:
   
     **Example:**
     `Math.log10(10) //returns 1` 
+
+---
+### New Number Properties
+ES6 added the following properties to the Number object:
+  - EPSILON
+    **Example:**
+    `let x = Number.EPSILON; //returns 2.220446049250313e-16`
+  - MIN_SAFE_INTEGER
+    **Example:**
+    `let  x = Number.MIN_SAFE_INTEGER; //returns -9007199254740991
+  - MAX_SAFE_INTEGER
+    **Example:**
+    `let  x = Number.MAX_SAFE_INTEGER; //returns 9007199254740991
+  
+---
+### New Number Methods
+ES6 added 2 new methods to the Number Object:
+- `Number.isInteger()` that returns `true` if the argument is an integer.
+  **Example:**
+  ```Javascript
+  Number.isInteger(10);        // returns true
+  Number.isInteger(10.5);      // returns false
+  ```
+- `Number.isSafeInteger()` returns `true` if the argument is a safe integer.
+  **Example:**
+  ```Javascript
+  Number.isSafeInteger(10);    // returns true
+  Number.isSafeInteger(12345678901234567890);  // returns false
+  ```
+---
+
+### New Global Methods
+ES6 added 2 new global number methods:
+- `isFinite()` returns `false` if the argument is `Infinity` or `Nan`. Otherwise it returns `true`:
+ **Example:**
+ ```Javascript
+  isFinite(10/0);       // returns false
+  isFinite(10/1);       // returns true
+ ```
+- `isNaN()` is the global method returns `true` if the argument is `NaN`. Otherwise if returns `false`:
+ **Example:**
+ `isNaN("Hello"); // returns true`
+
+ ---
+
+ ### Object entries()
+ The `entries()` method returns an Array Iterator object with key/value pairs. The `entries()` method doesn't change the original array.
+ ```Javascript
+const object1 = {
+  a: 'somestring',
+  b: 42
+};
+
+for (const [key, value] of Object.entries(object1)) {
+  console.log(`${key}: ${value}`);
+}
+
+// Expected output:
+// "a: somestring"
+// "b: 42"
+ ```
