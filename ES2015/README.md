@@ -28,6 +28,9 @@ Following are the new features included in ES6:
   - [New Number Methods](#new-number-methods)
   - [New Global Methods](#new-global-methods)
   - [Object entries()](#object-entries)
+  - [Javascript Modules](#javascript-modules)
+    - [Export](#export)
+    - [Import](#import)
 
 ---
 
@@ -651,3 +654,48 @@ for (const [key, value] of Object.entries(object1)) {
 // "a: somestring"
 // "b: 42"
  ```
+---
+### Javascript Modules
+JS modules allow you to break up the code into separate files. This makes it easier to maintain a code-base. Modules are imported from external files with the `import` statement. Modules also rely on `type=module` in the `<script>` tag.
+**Example:**
+```html
+<script type="module">
+import message from "./message.js";
+</script>
+```
+#### Export
+There are 2 types of exports in module:
+- Named Exports:
+  We can create the named exports in 2 ways. In-line individually, or all at once at the bottom.
+  - In-line individually:
+    ```javascript
+      export const name = "Jesse";
+      export const age = 40;
+    ``` 
+  - All at once at the bottom:
+    ```javascript
+      const name = "Jesse";
+      const age = 40;
+      export {name, age};
+    ```
+- Default Exports:
+  We can only have one default export in a file.
+  ```javascript
+  const message = () => {
+  const name = "Jesse";
+  const age = 40;
+  return name + ' is ' + age + 'years old.';
+  };
+
+  export default message;
+  ```
+#### Import
+We can import modules into a file in 2 ways, based on if they are named export or default exports. Named exports are constructed using curly braces, while default exports are not.
+- Import from named exports:
+ 
+  `import { name, age } from "./person.js";`
+- Import from default exports
+ 
+  `import message from "./message.js";`
+
+*Modules only work with HTTP(s) protocol. A web-page opened via the file:// protocol cannot use import / export.
