@@ -181,7 +181,7 @@ fruits.set("oranges", 200);
 | --------------------------------- | ----------------------------- |
 | Not directly iterable             | Directly iterable             |
 | Do not have a size property       | Have a size property          |
-| Keys must be Strings (or Symbols) | Keys can be any datatype      |
+| Keys must be Strings, integer (or Symbols) | Keys can be any datatype      |
 | Keys are not well ordered         | Keys are ordered by insertion |
 | Have default keys                 | Do not have default keys      |
 
