@@ -31,6 +31,7 @@ Following are the new features included in ES6:
   - [Javascript Modules](#javascript-modules)
     - [Export](#export)
     - [Import](#import)
+  - [Generators](#generators)
 
 ---
 
@@ -699,3 +700,45 @@ We can import modules into a file in 2 ways, based on if they are named export o
   `import message from "./message.js";`
 
 *Modules only work with HTTP(s) protocol. A web-page opened via the file:// protocol cannot use import / export.
+
+---
+
+### Generators
+A generator is a process that can be paused and resumed and can yield multiple values. A generator in javascript consists of a generator function, which returns an iterable `Generator` object.
+Additionally when used with `Promise`, generators can mimic the `async/await` functionality, which allows us to deal with asynchronous code in a more straightforward and readable manner. Although async/await is a more prevalent way to deal with common, simple asynchronous use cases, like fetching data from an API, generators have more advanced features that make learning how to use them worthwhile.
+
+**Syntax:**
+```Javascript
+// Generator function declaration
+function* generatorFunction() {}
+
+// Generator function expression
+const generatorFunction = function*() {}
+```
+Traditionally, functions in JavaScript run to completion, and calling a function will return a value when it arrives at the `return` keyword. If the return keyword is omitted, a function will implicitly return `undefined`. A generator function, however, does not return a value immediately, and instead returns an iterable Generator `object`.
+
+```Javascript
+// Create a generator function with multiple yields
+function* generatorFunction() {
+  yield 'Neo'
+  yield 'Morpheus'
+  yield 'Trinity'
+
+  return 'The Oracle'
+}
+
+const generator = generatorFunction()
+
+// Call next four times
+generator.next()
+generator.next()
+generator.next()
+generator.next()
+/*
+Output
+{value: "Neo", done: false}
+{value: "Morpheus", done: false}
+{value: "Trinity", done: false}
+{value: "The Oracle", done: true}
+*/
+```
